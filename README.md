@@ -1,5 +1,6 @@
 # MethaneAU
-This reposity proposes a modeling tool for methane inversion over Europe. 
+This reposity proposes a modeling tool for methane inversion over Europe. Prior to proceed with the tasks below, run the WRF-GHG WPS for the period of interest.
+
 
 1. Creating a CH4 a-priori emission file in the proper WRF netcdf file format
 
@@ -82,13 +83,7 @@ Each sector being assigned a folder with the same name, and containing 12 nc fil
     
     /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_12_ENE.0.1x0.1.nc
 
-with something similar for the other sectors
-
-- Run the script EDGARtoAE.py
-
-- Run the WRF-GHG WPS for the period of interest
-
-- Now you should be ready to run the anthro_emis, ``./anthro_emis < GHG.inp``
+with something similar for the other sectors. Run the script EDGARtoAE.py. Now you should be ready to run the anthro_emis, ``./anthro_emis < GHG.inp``
 
 2. Interpolating CAMS CH4 fields to the WRF-GHG initial and boundary conditions 
 
