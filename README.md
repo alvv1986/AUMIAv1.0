@@ -82,11 +82,11 @@ Each sector being assigned a folder with the same name, and containing 12 nc fil
     
     /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_12_ENE.0.1x0.1.nc
 
-with something similar for the other sectors. Run the script EDGARtoAE.py. Now you should be ready to run the anthro_emis, ``./anthro_emis < GHG.inp``
+with something similar for the other sectors. Run the scripts EDGARtoAE.py and . Now you should be ready to run the anthro_emis, ``./anthro_emis < GHG.inp``
 
 2. Interpolating background CH4 global concentrations to the WRF-GHG initial and boundary conditions 
 
-Background methane concentrations for Europe can be obtained from the Copernicus Atmosphere Monitoring Service (CAMS) global reanalysis (EAC4) (https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-reanalysis-eac4?tab=form). In addition to methane (chemistry), surface pressure fields are also required for mozbc, the utility here used.
+Background methane concentrations for Europe can be obtained from the Copernicus Atmosphere Monitoring Service (CAMS) global reanalysis (EAC4) (https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-reanalysis-eac4?tab=form). In addition to methane (chemistry), CAMS EAC4 surface pressure fields are also required for interpolation.
 
 - Create a txt file containing the model levels according to the selected CAMS product, L60 in this example (``levels.txt``). For CAMS EAC4 products, the model levels (1 to 60) can be obtanied from https://confluence.ecmwf.int/display/UDOC/L60+model+level+definitions.
 
