@@ -9,10 +9,11 @@ available.
 
 2. 24 different sectors are available for 2018
 
-"ENE", "REF_TRF", "IND", "RCO", "PRO_COAL", "PRO", "PRO_OIL", "PRO_GAS", "TRO_noRES", "TNR_Other", "TNR_Aviation_CDS", "TNR_Aviation_CRS", 
+    "ENE", "REF_TRF", "IND", "RCO", "PRO_COAL", "PRO", "PRO_OIL", "PRO_GAS", "TRO_noRES", "TNR_Other", "TNR_Aviation_CDS", "TNR_Aviation_CRS", 
 "TNR_Aviation_LTO", "TNR_Ship", "CHE", "IRO", "ENF", "MNM", "AWB", "AGS", "SWD_LDF", "SWD_INC", "WWT" and "FFF"
 
-Each sector being assigned a folder with the same name, and containing 12 nc files (monthly). Set ``pol_path`` in the script ``toAEv1.2.py`` (``CH4`` in this example contains all the 24 directories describe in step 2), e.g. for ENE we should have:
+    Each sector being assigned a folder with the same name, and containing 12 nc files (monthly). Set ``pol_path`` in the script ``EDGARtoAE.py`` 
+(``CH4`` in this example contains all the 24 directories describe in step 2), e.g. for ENE we should have:
 
     /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_1_ENE.0.1x0.1.nc
     
@@ -40,6 +41,6 @@ Each sector being assigned a folder with the same name, and containing 12 nc fil
 
     and something similar for the other sectors
 
-3. Run the script toAEv1.2.py: python toAEv1.2.py
+3. Run the script EDGARtoAE.py
 
 4. Now you should be ready to run the anthro_emis
