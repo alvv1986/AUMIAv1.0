@@ -7,53 +7,53 @@ Download EDGAR CH4 data. For this example we consider CH4 monthly gridmaps from 
 the option Annual sector-specific gridmaps (1970-2018) and montlhy sector-specific gridmaps (2000-2018), and then on CH4 for each sector, if 
 available. 24 different sectors are available for 2018: 
 
-    "ENE"
+    ENE: Power industry
     
-    "REF_TRF"
+    REF_TRF: Oil refineries and transformation industry
     
-    "IND"
+    IND: Combustion for manufacturing
     
-    "RCO"
+    RCO: Energy for Buildings
     
-    "PRO_COAL"
+    PRO_COAL: Fuel exploitation coal
     
-    "PRO"
+    PRO: Fuel exploitation
     
-    "PRO_OIL"
+    PRO_OIL: Fuel exploitation oil
     
-    "PRO_GAS"
+    PRO_GAS: Fuel exploitation gas
     
-    "TRO_noRES"
+    TRO_noRES: Road transportation no resuspension
     
-    "TNR_Other"
+    TNR_Other: Railways, pipelines, off-road transport
     
-    "TNR_Aviation_CDS"
+    TNR_Aviation_CDS: Aviation climbing & descent
     
-    "TNR_Aviation_CRS"
+    TNR_Aviation_CRS: Aviation cruise
     
-    "TNR_Aviation_LTO"
+    TNR_Aviation_LTO: Aviation landing & take-off 
     
-    "TNR_Ship"
+    TNR_Ship: Shipping
     
-    "CHE"
+    CHE: Chemical processes
     
-    "IRO"
+    IRO: Iron and steel production
     
-    "ENF"
+    ENF: Enteric fermentation
     
-    "MNM"
+    MNM: Manure management
     
-    "AWB"
+    AWB: Agricultural waste burning
     
-    "AGS"
+    AGS: Agricultural soils burning
     
-    "SWD_LDF"
+    SWD_LDF: Solid waste landfills
     
-    "SWD_INC"
+    SWD_INC: Solid waste incineration
     
-    "WWT"
+    WWT: Waste water handling
     
-    "FFF"
+    FFF: Fosil fuel fires
 
 Each sector being assigned a folder with the same name, and containing 12 nc files (monthly). Set ``pol_path`` in the script ``EDGARtoAE.py`` 
 (``CH4`` in this example contains all the 24 directories describe in step 2), e.g. for ENE (Power Industry) we should have:
