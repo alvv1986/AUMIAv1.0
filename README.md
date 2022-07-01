@@ -8,7 +8,9 @@ the option Annual sector-specific gridmaps (1970-2018) and montlhy sector-specif
 available. 24 different sectors are available for 2018: 
 
     "ENE"
+    
     "REF_TRF"
+    
     "IND"
     "RCO"
     "PRO_COAL"
