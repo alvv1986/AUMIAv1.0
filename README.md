@@ -13,9 +13,9 @@ available. 24 different sectors are available for 2018
 Each sector being assigned a folder with the same name, and containing 12 nc files (monthly). Set ``pol_path`` in the script ``EDGARtoAE.py`` 
 (``CH4`` in this example contains all the 24 directories describe in step 2), e.g. for ENE (Power Industry) we should have:
 
-/home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_1_ENE.0.1x0.1.nc
+    /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_1_ENE.0.1x0.1.nc
     
-/home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_2_ENE.0.1x0.1.nc
+    /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_2_ENE.0.1x0.1.nc
     
     /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_3_ENE.0.1x0.1.nc
     
