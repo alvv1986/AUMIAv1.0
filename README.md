@@ -45,8 +45,14 @@ available.
 
 - Run the script EDGARtoAE.py
 
+- Run the WRF-GHG WPS for the period of interest
+
 - Now you should be ready to run the anthro_emis
 
-2. fff 
+2. Interpolating CAMS CH4 fields to the WRF-GHG initial and boundary conditions 
 
-- hhh
+- Download Methane (chemistry) and Surface pressure 
+ 
+    fields from https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-reanalysis-eac4?tab=form.
+
+- 
