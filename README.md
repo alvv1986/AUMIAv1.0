@@ -87,7 +87,9 @@ with something similar for the other sectors. Run the script EDGARtoAE.py. Now y
 
 2. Interpolating CAMS CH4 fields to the WRF-GHG initial and boundary conditions 
 
-Download CAMS methane (chemistry) and surface pressure fields can be obtained from https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-reanalysis-eac4?tab=form.
+Download...
+
+- Download CAMS methane (chemistry) and surface pressure fields can be obtained from https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-reanalysis-eac4?tab=form.
 
 - Create a txt file containing the model levels according to the selected CAMS product, L60 in this example (``levels.txt``). For CAMS global reanalysis (EAC4), the model levels (1 to 60) can be obtanied from https://confluence.ecmwf.int/display/UDOC/L60+model+level+definitions.
 
