@@ -82,7 +82,7 @@ Each sector being assigned a folder with the same name, and containing 12 nc fil
     
     /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_12_ENE.0.1x0.1.nc
 
-and something similar for the other sectors
+with something similar for the other sectors
 
 - Run the script EDGARtoAE.py
 
@@ -92,7 +92,7 @@ and something similar for the other sectors
 
 2. Interpolating CAMS CH4 fields to the WRF-GHG initial and boundary conditions 
 
-- Download CAMS data. CAMS methane (chemistry) and surface pressure fields can be obtained from https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-reanalysis-eac4?tab=form.
+Download CAMS methane (chemistry) and surface pressure fields can be obtained from https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-reanalysis-eac4?tab=form.
 
 - Create a txt file containing the model levels according to the selected CAMS product, L60 in this example (``levels.txt``). For CAMS global reanalysis (EAC4), the model levels (1 to 60) can be obtanied from https://confluence.ecmwf.int/display/UDOC/L60+model+level+definitions.
 
