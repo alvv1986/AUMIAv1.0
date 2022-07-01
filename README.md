@@ -1,7 +1,7 @@
 # MethaneAU
 This reposity proposes a modeling tool for methane inversion over Europe. 
 
-1. Creating the CH4 a-priori emission file in the proper WRF netcdf file format
+1. Creating a CH4 a-priori emission file in the proper WRF netcdf file format
 
 - Download EDGAR CH4 data 
     
@@ -51,8 +51,8 @@ available.
 
 2. Interpolating CAMS CH4 fields to the WRF-GHG initial and boundary conditions 
 
-- Download Methane (chemistry) and Surface pressure 
+- Download CAMS data 
  
-    fields from https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-reanalysis-eac4?tab=form.
+    CAMS methane (chemistry) and surface pressure fields can be obtained from https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-reanalysis-eac4?tab=form.
 
 - 
