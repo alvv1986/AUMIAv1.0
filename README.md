@@ -3,7 +3,7 @@ This reposity proposes a modeling tool for methane inversion over Europe.
 
 1. Creating a CH4 a-priori emission file in the proper WRF netcdf file format
 
-    Download EDGAR CH4 data. For this example we consider CH4 monthly gridmaps from https://edgar.jrc.ec.europa.eu/dataset_ghg60#p2. Click to expand on 
+Download EDGAR CH4 data. For this example we consider CH4 monthly gridmaps from https://edgar.jrc.ec.europa.eu/dataset_ghg60#p2. Click to expand on 
 the option Annual sector-specific gridmaps (1970-2018) and montlhy sector-specific gridmaps (2000-2018), and then on CH4 for each sector, if 
 available. 24 different sectors are available for 2018: 
 
