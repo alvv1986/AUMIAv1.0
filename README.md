@@ -82,7 +82,7 @@ Each sector being assigned a folder with the same name, and containing 12 nc fil
     
     /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_12_ENE.0.1x0.1.nc
 
-with something similar for the other sectors. Run the scripts ``EDGARtoAE.py`` to create a EDGAR like , and ``CH4.py`` to make a quick visualization. Now you should be ready to run the anthro_emis, ``./anthro_emis < GHG.inp``
+with something similar for the other sectors. Run the scripts ``EDGARtoAE.py`` to create a EDGAR like , and ``CH4.py`` to make a quick visualization. Now you should be ready to run the anthro_emis, ``./anthro_emis < anthro_ghg.inp``
 
 3. Interpolating background CH4 global concentrations to the WRF-GHG initial and boundary conditions 
 
@@ -92,6 +92,8 @@ Background methane concentrations for Europe are obtained from CAMS global reana
 
 - Set up the parameters indir, outdir and ab in the ncl script MACC_BC2MOZART_CH4.ncl, and then run it by typing ``ncl fileid="03062022" MACC_BC2MOZART_CH4.ncl``. Name fileid whatever you want. This script is a modified version of the original one at https://confluence.ecmwf.int/pages/viewpage.action?pageId=174865233.
 
-- Set your mozbc namelist file according to the example in GHG.inp and then run mozbc, ``./mozbc < GHG.inp``.
+- Set your mozbc namelist file according to the example in GHG.inp and then run mozbc, ``./mozbc < mozbc_ghg.inp``.
 
-4. ....
+4. Run the WRF-GHG model
+
+
