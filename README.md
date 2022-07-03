@@ -1,7 +1,9 @@
 # MethaneAU
 This reposity proposes a WRF-based modeling tool for CH4 inversion over Europe. Prior to proceed with the tasks below, select a study period with availability of TROPOMI CH4 fields. The forward and backward models are the WRF-GHG and WRF-STILT, while the a-priori emissions are taken from the EDGAR model version 6. IC/CC for the forward modeling are based on ECMWF CAMS EAC4 fields.
 
-1. Creating a CH4 a-priori emission file in the proper WRF netcdf file format
+1. Run the WRF WPS for a given study period using ECMWF ERA5 fields
+
+2. Creating a CH4 a-priori emission file in the proper WRF netcdf file format
 
 For this example we consider CH4 monthly gridmaps (https://edgar.jrc.ec.europa.eu/dataset_ghg60#p2). Click to expand on the option Annual sector-specific gridmaps (1970-2018) and montlhy  sector-specific gridmaps (2000-2018), and then on CH4 for each sector, if available. 24 different sectors are available for 2018: 
 
@@ -82,7 +84,7 @@ Each sector being assigned a folder with the same name, and containing 12 nc fil
 
 with something similar for the other sectors. Run the scripts ``EDGARtoAE.py`` to create a EDGAR like , and ``CH4.py`` to make a quick visualization. Now you should be ready to run the anthro_emis, ``./anthro_emis < GHG.inp``
 
-2. Interpolating background CH4 global concentrations to the WRF-GHG initial and boundary conditions 
+3. Interpolating background CH4 global concentrations to the WRF-GHG initial and boundary conditions 
 
 Background methane concentrations for Europe are obtained from CAMS global reanalysis EAC4 fields (https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-reanalysis-eac4?tab=form). In addition to methane (chemistry), CAMS EAC4 surface pressure fields are also required for interpolation.
 
@@ -91,3 +93,5 @@ Background methane concentrations for Europe are obtained from CAMS global reana
 - Set up the parameters indir, outdir and ab in the ncl script MACC_BC2MOZART_CH4.ncl, and then run it by typing ``ncl fileid="03062022" MACC_BC2MOZART_CH4.ncl``. Name fileid whatever you want. This script is a modified version of the original one at https://confluence.ecmwf.int/pages/viewpage.action?pageId=174865233.
 
 - Set your mozbc namelist file according to the example in GHG.inp and then run mozbc, ``./mozbc < GHG.inp``.
+
+4. ....
