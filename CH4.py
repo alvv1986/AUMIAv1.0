@@ -53,4 +53,4 @@ cbar.set_label("$Kg$ $m^{-2}s^{-1}$ [$x10^{-10}$]", labelpad=2, fontsize=15)
 cbar.ax.tick_params(labelsize=15) 
 
 plt.savefig("edgar_ch4_all.png",bbox_inches='tight')
-plt.show()
+#plt.show()
