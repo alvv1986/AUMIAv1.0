@@ -94,7 +94,7 @@ Background methane concentrations for Europe are obtained from CAMS global reana
 
 - Set up the parameters indir, outdir and ab in the ncl script MACC_BC2MOZART_CH4.ncl, and then run it by typing ``ncl fileid="03062022" MACC_BC2MOZART_CH4.ncl``. Name fileid whatever you want. This script is a modified version of the original one at https://confluence.ecmwf.int/pages/viewpage.action?pageId=174865233.
 
-- Set your mozbc namelist file according to the example in GHG.inp and then run mozbc by typing ``./mozbc < mozbc_ghg.inp``.
+- Set your mozbc namelist file according to the example in ``mozbc_ghg.inp`` and then run mozbc by typing ``./mozbc < mozbc_ghg.inp``.
 
 4. Run the WRF-GHG model
 
