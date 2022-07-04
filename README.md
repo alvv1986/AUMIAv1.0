@@ -3,6 +3,8 @@ This reposity proposes a WRF-based modeling tool for CH4 inversion over Europe. 
 
 1. Run the WRF WPS for a given study period using ECMWF ERA5 fields
 
+Download, via the Climate Data Store Application Program Interface (cdsapi), met fields for both surface and vertical levels by running ``GetERA5-sl.py`` and ``GetERA5-pl.py``. A brief description about it can be found at https://dreambooker.site/2019/10/03/Initializing-the-WRF-model-with-ERA5-pressure-level/
+
 2. Create a CH4 a-priori emission file in the proper WRF netcdf file format
 
 For this example we consider CH4 monthly gridmaps (https://edgar.jrc.ec.europa.eu/dataset_ghg60#p2). Click to expand on the option Annual sector-specific gridmaps (1970-2018) and montlhy  sector-specific gridmaps (2000-2018), and then on CH4 for each sector, if available. 24 different sectors are available for 2018: 
@@ -82,17 +84,17 @@ Each sector being assigned a folder with the same name, and containing 12 nc fil
     
     /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_12_ENE.0.1x0.1.nc
 
-with something similar for the other sectors. Run the scripts ``EDGARtoAE.py`` to create a EDGAR like , and ``CH4.py`` to make a quick visualization. Now you should be ready to run the anthro_emis, ``./anthro_emis < anthro_ghg.inp``
+with something similar for the other sectors. Run the scripts ``EDGARtoAE.py`` to create a EDGAR like , and ``CH4.py`` to make a quick visualization. Now you should be ready to run the anthro_emis by typing ``./anthro_emis < anthro_ghg.inp``
 
 3. Interpolate background CH4 global concentrations to the WRF-GHG initial and boundary conditions 
 
-Background methane concentrations for Europe are obtained from CAMS global reanalysis EAC4 fields (https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-reanalysis-eac4?tab=form). In addition to methane (chemistry), CAMS EAC4 surface pressure fields are also required for interpolation.
+Background methane concentrations for Europe are obtained from CAMS global reanalysis EAC4 products (https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-reanalysis-eac4?tab=form). In addition to methane (chemistry), CAMS EAC4 surface pressure fields are also required for interpolation.
 
 - Create a txt file (``levels.txt``) containing the model levels according to the selected CAMS product, L60 in this example. For CAMS EAC4 products, the model levels (1 to 60) can be obtanied from https://confluence.ecmwf.int/display/UDOC/L60+model+level+definitions.
 
 - Set up the parameters indir, outdir and ab in the ncl script MACC_BC2MOZART_CH4.ncl, and then run it by typing ``ncl fileid="03062022" MACC_BC2MOZART_CH4.ncl``. Name fileid whatever you want. This script is a modified version of the original one at https://confluence.ecmwf.int/pages/viewpage.action?pageId=174865233.
 
-- Set your mozbc namelist file according to the example in GHG.inp and then run mozbc, ``./mozbc < mozbc_ghg.inp``.
+- Set your mozbc namelist file according to the example in GHG.inp and then run mozbc by typing ``./mozbc < mozbc_ghg.inp``.
 
 4. Run the WRF-GHG model
 
