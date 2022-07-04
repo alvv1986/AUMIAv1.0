@@ -1,5 +1,5 @@
 # MethaneAU
-This reposity proposes a WRF-based modeling tool for CH4 inversion over Europe. Prior to proceed with the tasks below, select a study period with availability of TROPOMI CH4 fields. The forward and backward models are the WRF-GHG and WRF-STILT, while the a-priori emissions are taken from the EDGAR model version 6. IC/CC for the forward modeling are based on ECMWF CAMS EAC4 fields.
+This methodology proposes a WRF-based modeling tool for CH4 inversion over Europe. Prior to proceed with the tasks below, select a study period with availability of TROPOMI CH4 fields. The forward and backward models are the WRF-GHG and WRF-STILT, while the a-priori emissions are taken from the EDGAR model version 6. IC/CC for the forward modeling are based on ECMWF CAMS EAC4 fields.
 
 1. Run the WRF WPS for a given study period using ECMWF ERA5 fields
 
