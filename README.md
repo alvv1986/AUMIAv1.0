@@ -3,7 +3,7 @@ This reposity proposes a WRF-based modeling tool for CH4 inversion over Europe. 
 
 1. Run the WRF WPS for a given study period using ECMWF ERA5 fields
 
-Download, via the Climate Data Store Application Program Interface (cdsapi), met fields for both surface and vertical levels by running ``GetERA5-sl.py`` and ``GetERA5-pl.py``. A brief description about it can be found at https://dreambooker.site/2019/10/03/Initializing-the-WRF-model-with-ERA5-pressure-level/
+Download, via the Climate Data Store Application Program Interface (cdsapi), met fields for both surface and vertical levels by running ``GetERA5-sl.py`` and ``GetERA5-pl.py``. More information about it can be found at https://dreambooker.site/2019/10/03/Initializing-the-WRF-model-with-ERA5-pressure-level/. Then, run ``geogrid.exe``, ``ungrib.exe`` and ``metgrid.exe`` as usually.
 
 2. Create a CH4 a-priori emission file in the proper WRF netcdf file format
 
