@@ -99,5 +99,5 @@ for i in nc_file:
     cbar = m.colorbar(cs, location='bottom', pad="5%", ticks=levels[::5], ax=ax)        
     cbar.set_label("xch4 [ppb]", fontsize=30)
     cbar.ax.tick_params(labelsize=30)
-  #  fig.savefig(output+"xch4_"+str(date)+'.png', bbox_inches='tight')
+    fig.savefig(output+"xch4_"+str(date)+'.png', bbox_inches='tight')
     plt.close(fig)
