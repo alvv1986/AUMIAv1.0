@@ -1,0 +1,15 @@
+&CONTROL
+ domains = 1
+ wrf_dir = '/users/anliduvi/EasyBuild/SW/LUMI-22.06/C/WRF/4.3.3-cpeGNU-22.06-chem/test/em_real'
+ anthro_dir =  '/project/project_465000083/edgarv6.0/2018'
+ src_file_prefix = 'v6.0_'
+ src_file_suffix = '_ALL_2018.0.1x0.1.nc'
+ src_names = 'CH4(16)'
+ sub_categories = 'emis_tot'
+ emis_map = 'CH4->CH4'
+ serial_output     = .false.
+ start_output_time = '2018-04-03_00:00:00'
+ stop_output_time  = '2018-04-23_00:00:00'
+ output_interval   = 86400
+ data_yrs_offset   = 0
+/
