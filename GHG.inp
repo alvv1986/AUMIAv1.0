@@ -1,0 +1,13 @@
+&control
+
+do_bc     = .true.
+do_ic     = .true.
+domain    = 1
+!dir_wrf   = '/users/anliduvi/EasyBuild/SW/LUMI-22.06/C/WRF/4.3.3-cpeGNU-22.06-chem/test/em_real/'
+dir_wrf   = './'
+dir_moz   = '/users/anliduvi/public_box/ECMWF2WRFChem/'
+fn_moz    = 'test20220803.nc'
+moz_var_suffix = ''
+def_missing_var = .true.
+spc_map   = 'CH4_BCK -> CH4'
+/
