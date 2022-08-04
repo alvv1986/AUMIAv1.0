@@ -96,6 +96,4 @@ Background methane concentrations for Europe are obtained from CAMS global reana
 
 - Set your mozbc namelist file according to the example in ``mozbc_ghg.inp`` and then run mozbc by typing ``./mozbc < mozbc_ghg.inp``.
 
-4. Run the WRF-GHG model
-
-
+4. Run the WRF-GHG model for example using the script run_wrf.sh, sbatch run_wrf.sh on Lumi.
