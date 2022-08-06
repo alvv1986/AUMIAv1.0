@@ -1,4 +1,4 @@
-; Issue as: ncl fileid="fileid" MACC_BC2MOZART_CH4.ncl
+; Issue as: ncl fileid="fileid" CAMStoMOZBC_EAC4.ncl
 
 load "$NCARG_ROOT/lib/ncarg/nclscripts/csm/contributed.ncl"
 setfileoption("nc","Format","LargeFile") 
