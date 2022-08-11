@@ -80,6 +80,7 @@ out->P0           = p0
 
 ; methane
 ch4               = short2flt(grg_ch4->ch4_c)
+ch4               = ch4*(16.04/28.97)
 ;ch4               = lonFlip(ch4)
 ch4!0             = "time"
 ch4!1             = "lev"
