@@ -9,7 +9,7 @@ if (.not. isvar("fileid")) then      ; is fileid on command line?
 end if
 
 indir    = "/project/project_465000083/cams/adaptor-0304_2304_2018"
-outdir   = "/users/anliduvi/public_box/ECMWF2WRFChem"
+outdir   = "/users/anliduvi/ECMWF2WRFChem"
 f_ch4    = indir+"/levtype_ml.nc"
 f_sp     = indir+"/levtype_sfc.nc"
 grg_ch4  = addfile(f_ch4,"r")
