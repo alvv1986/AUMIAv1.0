@@ -16,7 +16,6 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 import matplotlib.colors
 
-
 class FixPointNormalize(matplotlib.colors.Normalize):
     """ 
     Inspired by https://stackoverflow.com/questions/20144529/shifted-colorbar-matplotlib
