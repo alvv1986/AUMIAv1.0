@@ -1,5 +1,5 @@
 # MethaneAU
-This methodology proposes a WRF-based modeling tool for CH4 inversion over Europe. Prior to proceed with the tasks below, select a study period with availability of TROPOMI CH4 fields. The forward and backward models are the WRF-GHG and WRF-STILT, while the a-priori emissions are taken from the EDGAR model version 6. IC/CC for the forward modeling are based on ECMWF CAMS EAC4 fields.
+This methodology proposes a WRF-based modeling tool for CH4 inversion over Europe. Prior to proceed with the tasks below, select a study period with availability of TROPOMI CH4 fields. The forward and backward models are the WRF-GHG and WRF-STILT, while the a-priori emissions are taken from the EDGAR model version 6. IC/BC for the forward modeling are based on ECMWF CAMS EAC4 fields.
 
 1. Run the WRF WPS for a given study period using ECMWF ERA5 fields
 
@@ -96,4 +96,4 @@ Background methane concentrations for Europe are obtained from CAMS global reana
 
 - Set your mozbc namelist file according to the example in ``mozbc_ghg.inp`` and then run mozbc by typing ``./mozbc < mozbc_ghg.inp``.
 
-4. Run the WRF-GHG model for example using the script ``run_wrf.sh``, ``sbatch run_wrf.sh`` on Lumi.
+4. Run the WRF-GHG model. If the emission files for anthro (from sectors other than biomass burning) and biomass burning sources are all ready to use, then the script bash ``sbatch run_wrf.sh`` can be used for automation, for example by typing ``sbatch run_wrf.sh`` on Lumi.
