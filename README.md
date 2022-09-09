@@ -96,4 +96,4 @@ Background methane concentrations for Europe are obtained from CAMS global reana
 
 - Set your mozbc namelist file according to the example in ``mozbc_ghg.inp`` and then run mozbc by typing ``./mozbc < mozbc_ghg.inp``.
 
-4. Run the WRF-GHG model. If the emission files for anthro (from sectors other than biomass burning) and biomass burning sources are all ready to use, then the script bash ``sbatch run_wrf.sh`` can be used for automation, for example by typing ``sbatch run_wrf.sh`` on Lumi.
+4. Run the WRF-GHG model. If the emission files for anthro (from sectors other than biomass burning) and biomass burning sources are all ready to use, then the script bash ``run_wrf.sh`` can be used for automation, for example by typing ``sbatch run_wrf.sh`` on Lumi.
