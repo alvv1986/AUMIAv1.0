@@ -1,0 +1,12 @@
+&control
+fire_directory = '/scratch/project_465000217/fires/'
+fire_filename(1)  = 'FINNv2.5_mod_MOZART_2018_c20211213.txt'
+start_date     = '2018-04-03',
+end_date       = '2018-04-27',
+Model          = 'WRF',
+wrf_directory  = '/users/anliduvi/EasyBuild/SW/LUMI-22.06/C/WRF/4.3.3-cpeGNU-22.06-chem/test/em_real/',
+domains        = 1,
+defaultUnits   = 'molecules/cm^2/s',
+FinnVers       = '2.2MOD',
+wrf2fire_map   = 'ch4 -> CH4'
+/
