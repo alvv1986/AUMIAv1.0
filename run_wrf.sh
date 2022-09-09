@@ -231,7 +231,7 @@ rm met_em.d01* wrfinput_d01 wrfbdy_d01
 ln -sf $DIR_MET/met_em.d01* .
 ln -s $DIR_WRF/wrfinput_d01 .
 ln -s $DIR_WRF/wrfbdy_d01 .
-./mozbc < GHG_test.inp
+./mozbc < mozbc_ghg.inp
 cd $DIR_WRF
 cat << Eof > namelist.input
 &time_control
