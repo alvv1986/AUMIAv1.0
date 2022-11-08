@@ -49,8 +49,8 @@ cut_terrain_map = matplotlib.colors.LinearSegmentedColormap.from_list('cut_terra
 
 norm = FixPointNormalize(sealevel=0,vmax=2000,vmin=0)
 
-wrf_sp_d01 = Dataset('/Users/au710474/Documents/scripts/WRFSP5/Dom/geo_em.d01.nc', mode='r')
-wrf_sp_d02 = Dataset('/Users/au710474/Documents/scripts/WRFSP5/Dom/geo_em.d02.nc', mode='r')
+wrf_sp_d01 = Dataset('/home/angel/Documents/iag-usp/tropomi/Domains/geo_em.d01.nc', mode='r')
+wrf_sp_d02 = Dataset('/home/angel/Documents/iag-usp/tropomi/Domains/geo_em.d02.nc', mode='r')
 
 # Loading coordinates
 xlat1 = wrf_sp_d01['XLAT_M'][0]
@@ -68,8 +68,31 @@ d02_lat = [corner_lats_2[0], corner_lats_2[1], corner_lats_2[2], corner_lats_2[3
 d02_lon = [corner_lons_2[0], corner_lons_2[1], corner_lons_2[2], corner_lons_2[3]]
 d02_sqr = LinearRing(list(zip(d02_lon, d02_lat)))
 
-fig = plt.figure(figsize=(10, 9))
+fig = plt.figure(figsize=(11, 11))
 ax = plt.axes(projection = ccrs.Orthographic(central_latitude=49.1, central_longitude=15.1))
+
+ax.plot(14.1226, 52.1663, 'r^', markersize=8, transform=ccrs.Geodetic())   # Lindenberg
+ax.text(14.4, 52.1663, '1', transform=ccrs.Geodetic(), fontsize=13, weight = 'bold')
+ax.plot(8.6360, 45.8147, 'ro', markersize=8, transform=ccrs.Geodetic())    # Ispra
+ax.text(9.0, 45.8147, '2', transform=ccrs.Geodetic(), fontsize=13, weight = 'bold')
+ax.plot(2.1125, 47.9647, 'ro', markersize=8, transform=ccrs.Geodetic())    # Trainou
+ax.text(2.6, 47.4, '3', transform=ccrs.Geodetic(), fontsize=13, weight = 'bold')
+ax.plot(5.5036, 48.5619, 'r^', markersize=8, transform=ccrs.Geodetic())    # Observatoire pérenne de l'environnement
+ax.text(5.8, 48.5619, '4', transform=ccrs.Geodetic(), fontsize=13, weight = 'bold')
+ax.plot(15.0800, 49.572, 'r^', markersize=8, transform=ccrs.Geodetic())    # Křešín u Pacova
+ax.text(15.3, 49.572, '5', transform=ccrs.Geodetic(), fontsize=13, weight = 'bold')
+ax.plot(11.0246, 47.8011, 'ro', markersize=8, transform=ccrs.Geodetic())   # Hohenpeissenberg
+ax.text(11.3, 47.8011, '6', transform=ccrs.Geodetic(), fontsize=13, weight = 'bold')
+ax.plot(24.2947, 61.8474, 'ro', markersize=8, transform=ccrs.Geodetic())   # Hyytiälä
+ax.text(24.6, 61.8474, '7', transform=ccrs.Geodetic(), fontsize=13, weight = 'bold')
+ax.plot(2.142, 48.7227, 'ro', markersize=8, transform=ccrs.Geodetic())     # Saclay
+ax.text(2.5, 48.7227, '8', transform=ccrs.Geodetic(), fontsize=13, weight = 'bold')
+ax.plot(10.535, 51.8088, 'ro', markersize=8, transform=ccrs.Geodetic())    # Torfhaus
+ax.text(10.9, 51.8088, '9', transform=ccrs.Geodetic(), fontsize=13, weight = 'bold')
+ax.plot(2.9658, 45.7719, 'ro', markersize=8, transform=ccrs.Geodetic())    # Puy de Dôme
+ax.text(3.3, 45.7719, '10', transform=ccrs.Geodetic(), fontsize=13, weight = 'bold')
+ax.plot(10.6999, 44.19369, 'ro', markersize=8, transform=ccrs.Geodetic())    # Puy de Dôme
+ax.text(11.0, 44.19369, '11', transform=ccrs.Geodetic(), fontsize=13, weight = 'bold')
 
 ax.add_feature(cfeature.BORDERS)
 ax.coastlines('10m', zorder=15)
@@ -81,7 +104,7 @@ cbax = ax.pcolormesh(xlon1, xlat1, topo1,
                    cmap=cut_terrain_map, norm=norm)
 
 ax.add_geometries([d02_sqr], ccrs.PlateCarree(), facecolor='none', 
-                  edgecolor="red", linewidth=2.0, zorder=20)
+                  edgecolor="red", linewidth=1.5, zorder=20)
 ax.text(xlon2.max() - 0.5, xlat2.min(), "D02", fontsize=20,
         transform=ccrs.PlateCarree(), color="red")
 axins = inset_axes(ax, width="32%", height="32%", loc="upper left", 
@@ -106,5 +129,5 @@ cb = plt.colorbar(cbax, ax=ax, shrink=0.8)
 cb.ax.tick_params(labelsize=15)
 cb.set_label(label="HGT (m)", labelpad=-40, rotation=0, y=1.085, fontsize=20)
 plt.tick_params(labelsize=22)
-plt.savefig('/Users/au710474/Documents/scripts/WRFSP5/Dom/domains.png', dpi=300,  bbox_inches="tight")
-#plt.show()
+#plt.savefig('/Users/au710474/Documents/scripts/WRFSP5/Dom/domains.png', dpi=300,  bbox_inches="tight")
+plt.show()
