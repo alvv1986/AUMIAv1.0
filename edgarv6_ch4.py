@@ -12,10 +12,10 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.basemap import Basemap
 from matplotlib.ticker import MaxNLocator
 
-df_tot = xr.open_dataset("/Users/au710474/Documents/scripts/EDGAR/v6.0_CH4_TOTAL_NO_FIRES_2018.0.1x0.1.nc")
-df_agr = xr.open_dataset("/Users/au710474/Documents/scripts/EDGAR/v6.0_CH4_AGRICULTURE_2018.0.1x0.1.nc")
-df_was = xr.open_dataset("/Users/au710474/Documents/scripts/EDGAR/v6.0_CH4_WASTE_2018.0.1x0.1.nc")
-df_ene = xr.open_dataset("/Users/au710474/Documents/scripts/EDGAR/v6.0_CH4_ENERGY_2018.0.1x0.1.nc")
+df_tot = xr.open_dataset("/home/angel/Documents/iag-usp/modis/methane_project/v6.0_CH4_TOTAL_NO_FIRES_2018.0.1x0.1.nc")
+df_agr = xr.open_dataset("/home/angel/Documents/iag-usp/modis/methane_project/v6.0_CH4_AGRICULTURE_2018.0.1x0.1.nc")
+df_was = xr.open_dataset("/home/angel/Documents/iag-usp/modis/methane_project/v6.0_CH4_WASTE_2018.0.1x0.1.nc")
+df_ene = xr.open_dataset("/home/angel/Documents/iag-usp/modis/methane_project/v6.0_CH4_ENERGY_2018.0.1x0.1.nc")
 
 df_tot["lon_adj"] = xr.where(df_tot["lon"] > 180, df_tot["lon"]-360, df_tot["lon"])
 df_tot = df_tot.sortby(df_tot.lon_adj)
@@ -45,9 +45,9 @@ ch4_ene[ch4_ene == 0] = np.nan
 ch4 = np.array([ch4_agr, ch4_was, ch4_ene, ch4_tot])
 levels = MaxNLocator(nbins=20).tick_values(1,5) 
 
-titulos = ['AGRICULTURE', 'WASTE', 'ENERGY', 'ALL SOURCES']
+titulos = ['(a) Agriculture', '(b) Waste', '(c) Energy', '(d) All sources (except fires)']
 
-fig, axes = plt.subplots(2, 2, figsize=(25,25))
+fig, axes = plt.subplots(2, 2, figsize=(28,28))
 c=0
 for n_row in range(2):
     for n_col in range(2):    
@@ -60,13 +60,13 @@ for n_row in range(2):
         x1, y1 = m(x, y)
         x1[x1 == pinf] = 0
         x1[x1 == pinf] = 0
-        cs = m.contourf(x1, y1, ch4[c][4]*10**10, cmap='YlOrBr', levels=levels, extend='max')
-        axes[n_row,n_col].set_title(titulos[c], loc='left', fontsize=15)
+        cs = m.contourf(x1, y1, ch4[c][4]*10**10, cmap='YlOrRd', levels=levels, extend='max')
+        axes[n_row,n_col].set_title(titulos[c], loc='left', fontsize=13)
         c=c+1
 plt.subplots_adjust(bottom=0.12, right=0.38, top=0.33)
 clb=plt.colorbar(cs, ax=axes.ravel().tolist(),
                  shrink=0.7, pad=0.05, ticks=[1, 2, 3, 4, 5])
-clb.set_label(label='$Kg$ $m^{-2}s^{-1}$ [$x10^{-10}$]', size=16, weight='bold')
+clb.set_label(label='$Kg$ $m^{-2}s^{-1}$ [$x10^{-10}$]', size=15, weight='bold')
 clb.ax.tick_params(labelsize=15)
 
 plt.show()
