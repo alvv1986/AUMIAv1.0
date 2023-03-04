@@ -1,9 +1,7 @@
 #!/bin/csh
 setenv HDF5_DISABLE_VERSION_CHECK 1
 set id = 2018
-#set inputdirectory = /scratch/project_465000083/wrfout/0304_2704_2018/wrfout_tropo
 set inputdirectory = /scratch/project_465000083/wrfout/test/cam-chem_4dayrun_nofire_ysu
-#set outputdirectory = /scratch/project_465000083/regrid/mlevels/2018
 set outputdirectory = /scratch/project_465000083/regrid/test/cam-chem_4dayrun_nofire_ysu
 foreach mm (04)
 foreach day (01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31)
