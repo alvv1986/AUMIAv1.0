@@ -7,9 +7,9 @@ foreach year (2018)
   foreach day (01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31)
    foreach hour (00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23)
 
-        setenv FIN /scratch/project_465000083/mlevels/mlevels_d01_${year}-${mon}-${day}-${hour}Z.nc
+        setenv FIN /home/angel/mlevels/mlevels_d01_${year}-${mon}-${day}-${hour}Z.nc
         if (-e $FIN) then
-        setenv FON /scratch/project_465000083/mcolumns/column_d01_${year}-${mon}-${day}-${hour}Z.nc
+        setenv FON /home/angel/mcolumns/column_d01_${year}-${mon}-${day}-${hour}Z.nc
 
 ncl << EOF
 
