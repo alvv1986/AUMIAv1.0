@@ -1,5 +1,5 @@
 # MethaneAU
-This methodology proposes a WRF-based modeling tool for CH4 inversion over Europe. Prior to proceed with the tasks below, select a study period with availability of TROPOMI CH4 fields. The WRF-based models WRF-GHG and WRF-STILT were selected for the forward and backward modeling; the WRF-STILT implementation is currently under development. The a-priori emissions are taken from the EDGAR model version 6. IC/BC for the forward modeling are based on CAM-chem fields.
+This methodology proposes a modeling framework for CH4 inversion over Europe. Prior to proceed with the tasks below, select a study period with availability of TROPOMI CH4 fields. The WRF-based models WRF-GHG and WRF-STILT were selected for the forward and backward modeling; the WRF-STILT implementation is currently under development. The a-priori emissions are taken from the EDGAR model version 6. IC/BC for the forward modeling are based on CAM-chem fields.
 
 1. Run the WRF WPS for a given study period using ECMWF ERA5 fields
 
@@ -60,31 +60,31 @@ For this example we consider CH4 monthly gridmaps (https://edgar.jrc.ec.europa.e
 Each sector being assigned a folder with the same name, and containing 12 nc files (monthly). Set ``pol_path`` in the script ``EDGARtoAE.py`` 
 (``CH4`` in this example contains all the 24 directories describe in step 2), e.g. for ENE (Power Industry) we should have:
 
-    /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_1_ENE.0.1x0.1.nc
+    /home/angel/tropomi/CH4/ENE/v6.0_CH4_2018_1_ENE.0.1x0.1.nc
 
-    /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_2_ENE.0.1x0.1.nc
+    /home/angel/tropomi/CH4/ENE/v6.0_CH4_2018_2_ENE.0.1x0.1.nc
     
-    /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_3_ENE.0.1x0.1.nc
+    /home/angel/tropomi/CH4/ENE/v6.0_CH4_2018_3_ENE.0.1x0.1.nc
     
-    /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_4_ENE.0.1x0.1.nc
+    /home/angel/tropomi/CH4/ENE/v6.0_CH4_2018_4_ENE.0.1x0.1.nc
     
-    /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_5_ENE.0.1x0.1.nc
+    /home/angel/tropomi/CH4/ENE/v6.0_CH4_2018_5_ENE.0.1x0.1.nc
     
-    /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_6_ENE.0.1x0.1.nc
+    /home/angel/tropomi/CH4/ENE/v6.0_CH4_2018_6_ENE.0.1x0.1.nc
     
-    /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_7_ENE.0.1x0.1.nc
+    /home/angel/tropomi/CH4/ENE/v6.0_CH4_2018_7_ENE.0.1x0.1.nc
     
-    /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_8_ENE.0.1x0.1.nc
+    /home/angel/tropomi/CH4/ENE/v6.0_CH4_2018_8_ENE.0.1x0.1.nc
     
-    /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_9_ENE.0.1x0.1.nc
+    /home/angel/tropomi/CH4/ENE/v6.0_CH4_2018_9_ENE.0.1x0.1.nc
     
-    /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_10_ENE.0.1x0.1.nc
+    /home/angel/tropomi/CH4/ENE/v6.0_CH4_2018_10_ENE.0.1x0.1.nc
     
-    /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_11_ENE.0.1x0.1.nc
+    /home/angel/tropomi/CH4/ENE/v6.0_CH4_2018_11_ENE.0.1x0.1.nc
     
-    /home/angel/Documents/iag-usp/modis/methane_project/CH4/ENE/v6.0_CH4_2018_12_ENE.0.1x0.1.nc
+    /home/angel/tropomi/CH4/ENE/v6.0_CH4_2018_12_ENE.0.1x0.1.nc
 
-with something similar for the other sectors. Run the scripts ``EDGARtoAE.py`` to write the data in the proper EDGAR data file format, and ``CH4.py`` to make a quick visualization of the emissions data. Now you should be ready to run the anthro_emis by typing ``./anthro_emis < anthro_ghg.inp``
+with something similar for the other sectors. Run the scripts ``EDGARtoAE.py`` to write the data in the proper EDGAR data file format, and ``edgarv6_ch4.py`` to make a quick visualization of the emissions data. Now you should be ready to run the anthro_emis by typing ``./anthro_emis < anthro_ghg.inp``
 
 3. Interpolate background CH4 global concentrations to the WRF-GHG initial and boundary conditions 
 
