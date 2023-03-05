@@ -20,7 +20,7 @@ from scipy import stats
 
 path_s5p = '/home/angel/tropomi/regridded/'
 path_mlev = '/home/angel/tropomi/mlevels/'
-path_colu = '/home/angel/tropomi/column/'
+path_colu = '/home/angel/tropomi/mcolumn/'
 figs = '/home/angel/tropomi/monthly_maps/'
 
 lon_0 = 5.66
