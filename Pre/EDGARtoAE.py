@@ -139,7 +139,7 @@ agriculture = ["ENF", "MNM", "AWB", "AGS"]
 waste       = ["SWD_LDF", "SWD_INC", "WWT"]
 fires       = ["FFF"]
 
-pol_path = "/home/angel/Documents/iag-usp/modis/methane_project/CH4"
+pol_path = "/home/angel/tropomi/CH4"
 
 ch4_all = join_pol_by_sector(pol_path, total=True)
 write_netcdf_toAE(ch4_all, "CH4", "ALL")
