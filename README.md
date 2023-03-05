@@ -1,5 +1,5 @@
 # MethaneAU
-This methodology proposes a modeling framework for CH4 inversion over Europe. Prior to proceed with the tasks below, select a study period with availability of TROPOMI CH4 fields. The WRF-based models WRF-GHG and WRF-STILT were selected for the forward and backward modeling; the WRF-STILT implementation is currently under development. The a-priori emissions are taken from the EDGAR model version 6. IC/BC for the forward modeling are based on CAM-chem fields.
+This methodology proposes a modeling framework for CH_4 inversion over Europe. Prior to proceed with the tasks below, select a study period with availability of TROPOMI CH4 fields. The WRF-based models WRF-GHG and WRF-STILT were selected for the forward and backward modeling; the WRF-STILT implementation is currently under development. The a-priori emissions are taken from the EDGAR model version 6. IC/BC for the forward modeling are based on ERA5 fields for meteorology and on CAM-chem fields for CH4 concentration.
 
 1. Run the WRF WPS for a given study period using ECMWF ERA5 fields
 
@@ -86,10 +86,16 @@ Each sector being assigned a folder with the same name, and containing 12 nc fil
 
 with something similar for the other sectors. Run the scripts ``EDGARtoAE.py`` to write the data in the proper EDGAR data file format, and ``edgarv6_ch4.py`` to make a quick visualization of the emissions data. Now you should be ready to run the anthro_emis by typing ``./anthro_emis < anthro_ghg.inp``
 
-3. Interpolate background CH4 global concentrations to the WRF-GHG initial and boundary conditions 
+3. 
+
+4. Interpolate background CH4 global concentrations to the WRF-GHG initial and boundary conditions 
 
 Background methane concentrations for Europe are taken from CAM-chem (https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-reanalysis-eac4?tab=form).
 
 - Set your mozbc namelist file according to the example in ``mozbc_ghg.inp`` and then run mozbc by typing ``./mozbc < mozbc_ghg.inp``.
 
-4. Run the WRF-GHG model. If the emission files for anthro (from sectors other than biomass burning) and biomass burning sources are all ready to use, then the script bash ``run_wrf.sh`` can be used for automation, for example by typing ``sbatch run_wrf.sh`` on Lumi.
+5. Run the WRF-GHG model 
+
+If the emission files for anthro (from sectors other than biomass burning) and biomass burning sources are all ready to use, then the script bash ``run_wrf.sh`` can be used for automation, for example by typing ``sbatch run_wrf.sh`` on Lumi.
+
+6. 
