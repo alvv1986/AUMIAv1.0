@@ -88,11 +88,7 @@ with something similar for the other sectors. Run the scripts ``EDGARtoAE.py`` t
 
 3. Interpolate background CH4 global concentrations to the WRF-GHG initial and boundary conditions 
 
-Background methane concentrations for Europe are obtained from CAMS global reanalysis EAC4 products (https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-reanalysis-eac4?tab=form). In addition to methane (chemistry), CAMS EAC4 surface pressure fields are also required for interpolation.
-
-- Create a txt file (``levels.txt``) containing the model levels according to the selected CAMS product, L60 in this example. For CAMS EAC4 products, the model levels (1 to 60) can be obtanied from https://confluence.ecmwf.int/display/UDOC/L60+model+level+definitions.
-
-- Set up the parameters indir, outdir and ab in the ncl script MACC_BC2MOZART_CH4.ncl, and then run it by typing ``ncl fileid="20220803" MACC_BC2MOZART_CH4.ncl``. Name fileid as a date format YYYYMMDD, e.g. 20220803. This script is a modified version of the original one at https://confluence.ecmwf.int/pages/viewpage.action?pageId=174865233.
+Background methane concentrations for Europe are taken from CAM-chem (https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-reanalysis-eac4?tab=form).
 
 - Set your mozbc namelist file according to the example in ``mozbc_ghg.inp`` and then run mozbc by typing ``./mozbc < mozbc_ghg.inp``.
 
