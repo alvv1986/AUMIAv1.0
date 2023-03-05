@@ -10,9 +10,9 @@ ulimit -s unlimited
 ############################# env vars and paths ##############################
 export HDF5_DISABLE_VERSION_CHECK=1
 DIR_WRF=$EBROOTWRF/test/em_real
-DIR_MET=/project/project_465000083/met_em/era5/0304_2704_2018
+DIR_MET=/project/project_465000083/met_em/era5
 DIR_MOZ=/users/anliduvi/mozbc_gfortran
-DIR_OUT=/scratch/project_465000083/wrfout/0304_2704_2018_ysu_1
+DIR_OUT=/scratch/project_465000083/wrfout
 ###############################################################################
 zero=0
 # Defining starting year and month for loop 
