@@ -1,13 +1,13 @@
 # MethaneAU
-This methodology proposes a modeling framework for CH<sub>4</sub> inversion over Europe. Prior to proceed with the tasks below, select a study period with availability of TROPOMI CH4 fields. The WRF-based models WRF-GHG and WRF-STILT were selected for the forward and backward modeling; the WRF-STILT implementation is currently under development. The a-priori emissions are taken from the EDGAR model version 6. IC/BC for the forward modeling are based on ERA5 fields for meteorology and on CAM-chem fields for CH4 concentration.
+This methodology proposes a modeling framework for CH<sub>4</sub> inversion over Europe. Prior to proceed with the tasks below, select a study period with availability of TROPOMI CH<sub>4</sub> fields. The WRF-based models WRF-GHG and WRF-STILT were selected for the forward and backward modeling; the WRF-STILT implementation is currently under development. The a-priori emissions are taken from the EDGAR model version 6. IC/BC for the forward modeling are based on ERA5 fields for meteorology and on CAM-chem fields for CH<sub>4</sub> concentration.
 
 1. Run the WRF WPS for a given study period using ECMWF ERA5 fields
 
 Download, via the Climate Data Store Application Program Interface (cdsapi), met fields for both surface and vertical levels by running ``GetERA5-sl.py`` and ``GetERA5-pl.py``. More information about it can be found at https://dreambooker.site/2019/10/03/Initializing-the-WRF-model-with-ERA5-pressure-level/. Then, run ``geogrid.exe``, ``ungrib.exe`` and ``metgrid.exe`` as usually.
 
-2. Create a CH4 a-priori emission file in the proper WRF netcdf file format
+2. Create a CH<sub>4</sub> a-priori emission file in the proper WRF netcdf file format
 
-For this example we consider CH4 monthly gridmaps (https://edgar.jrc.ec.europa.eu/dataset_ghg60#p2). Click to expand on the option Annual sector-specific gridmaps (1970-2018) and montlhy  sector-specific gridmaps (2000-2018), and then on CH4 for each sector, if available. 24 different sectors are available for 2018: 
+For this example we consider CH4 monthly gridmaps (https://edgar.jrc.ec.europa.eu/dataset_ghg60#p2). Click to expand on the option Annual sector-specific gridmaps (1970-2018) and montlhy  sector-specific gridmaps (2000-2018), and then on CH<sub>4</sub> for each sector, if available. 24 different sectors are available for 2018: 
 
     ENE: Power industry
     
@@ -88,7 +88,7 @@ with something similar for the other sectors. Run the scripts ``EDGARtoAE.py`` t
 
 3. 
 
-4. Interpolate background CH4 global concentrations to the WRF-GHG initial and boundary conditions 
+4. Interpolate background CH<sub>4</sub> global concentrations to the WRF-GHG initial and boundary conditions 
 
 Background methane concentrations for Europe are taken from CAM-chem (https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-reanalysis-eac4?tab=form).
 
