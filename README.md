@@ -96,6 +96,8 @@ Background methane concentrations for Europe are taken from CAM-chem (https://ww
 
 5. Run the WRF-GHG model 
 
-If the emission files for anthro (from sectors other than biomass burning) and biomass burning sources are all ready to use, then the script bash ``run_wrf.sh`` can be used for automation, for example by typing ``sbatch run_wrf.sh`` on Lumi. The postprocessing requires...
+If the emission files for anthro (from sectors other than biomass burning) and biomass burning sources are all ready to use, then the script bash ``run_wrf.sh`` can be used for automation, for example by typing ``sbatch run_wrf.sh`` on Lumi. 
 
-6. 
+6. Postprocessing
+
+- Set
