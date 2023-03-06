@@ -1,5 +1,5 @@
 # AUMIAv1.0
-This methodology proposes a modeling framework for CH<sub>4</sub> inversion over Europe. The WRF-based models WRF-GHG and WRF-STILT were selected for the forward and backward modeling; the WRF-STILT implementation is currently under development. The a-priori emissions are taken from the EDGAR model version 6. IC/BC for the forward modeling are based on ERA5 fields for meteorology and on CAM-chem fields for CH<sub>4</sub> concentration. Prior to proceed with the tasks below, make sure you have all the NCAR utilities (anthro_emis, fire_emis and mozbc) properly installed.
+This methodology proposes a modeling framework for CH<sub>4</sub> inversion over Europe. The WRF-based models WRF-GHG and WRF-STILT were selected for the forward and backward modeling; the WRF-STILT implementation is currently under development. The a-priori emissions are taken from the EDGAR model version 6. IC/BC for the forward modeling are based on ERA5 fields for meteorology and on CAM-chem fields for CH<sub>4</sub> concentration. Prior to proceed with the tasks below, make sure you have the NCAR utilities anthro_emis, fire_emis and mozbc properly installed.
 
 1. Run the WRF WPS for a given study period using ECMWF ERA5 fields
 
