@@ -1,9 +1,9 @@
 # AUMIAv1.0
-This methodology proposes a satellite-based tool for the quantification of CH<sub>4</sub> emissions over Europe. The WRF-based models WRF-GHG and WRF-STILT were selected for the forward and backward modeling; the WRF-STILT implementation is currently under development. The CH<sub>4</sub> space observations are based on TROPOMI measurements, in this case the SRON RemoTeC-S5P XCH4 scientific product version 17 which represents the most recent improvements to the TROPOMI operational product. The a-priori emissions are taken from the EDGAR model version 6. IC/BC for the forward modeling are based on ERA5 fields for meteorology and on CAM-chem fields for CH<sub>4</sub> concentration. Prior to proceed with the tasks below, make sure you have the NCAR utilities anthro_emis, fire_emis and mozbc properly installed.
+An inverse analysis method taking full advantage of space-based observations is being developed to better constrain a priori country-scale fluxes of methane across Europe. The WRF-based models WRF-GHG and WRF-STILT were selected to be the forward and backward modeling components, respectively; the WRF-STILT implementation is currently under development. The space observations of XCH<sub>4</sub> are based on TROPOMI measurements, namely the SRON RemoTeC-S5P XCH4 scientific product version 17 which represents the most recent improvements to the TROPOMI operational product. The a-priori CH<sub>4</sub> emissions are taken from the EDGAR model version 6. IC/BC for the forward modeling are based on ERA5 fields for meteorology and on CAM-chem fields for CH<sub>4</sub> concentration. Prior to proceed with the tasks below, make sure you have the NCAR utilities anthro_emis, fire_emis and mozbc properly installed.
 
-1. Run the WRF WPS for a given study period using ECMWF ERA5 fields
+1. Run the WRF WPS using ECMWF ERA5 fields
 
-Download, via the Climate Data Store Application Program Interface (cdsapi), met fields for both surface and vertical levels by running ``GetERA5-sl.py`` and ``GetERA5-pl.py``. Then, run ``geogrid.exe``, ``ungrib.exe`` and ``metgrid.exe`` as usually. For information on the grid configuration look up the ``namelist.wps`` file.
+Download, via the Climate Data Store Application Program Interface (cdsapi), met fields for both surface and vertical levels by running ``GetERA5-sl.py`` and ``GetERA5-pl.py``. Then, run ``geogrid.exe``, ``ungrib.exe`` and ``metgrid.exe`` as usually. For information on the grid configuration here used look up the ``namelist.wps`` file.
 
 2. Create a CH<sub>4</sub> a-priori emission file in the proper WRF netcdf file format
 
@@ -84,24 +84,24 @@ Each sector is assigned a folder with the same name, and contains 12 nc files (m
     
     /home/angel/tropomi/CH4/ENE/v6.0_CH4_2018_12_ENE.0.1x0.1.nc
 
-with something similar for the other sectors. Run the scripts ``EDGARtoAE.py`` to write the data in the proper WRF data file format, and ``edgarv6_ch4.py`` to make a quick visualization of the emissions data. Now you should be ready to run the ``anthro_emis`` by typing ``./anthro_emis < anthro_ghg.inp``
+with something similar for the other sectors. Run the scripts ``EDGARtoAE.py`` to write the data in the proper WRF data file format, and ``edgarv6_ch4.py`` to make a quick visualization of the emissions data. Now you should be ready to run ``anthro_emis`` by typing ``./anthro_emis < anthro_ghg.inp``
 
 3. Create the fire emission files
 
-Fire emission data are taken from FINN (https://rda.ucar.edu/datasets/ds312.9/). The emission files are created using the ``fire_emis`` utility. Set the file ``finn_ghg.inp`` accordingly and then run the fire_emis by typing ``./anthro_emis < anthro_ghg.inp`` 
+Fire emissions data are taken from FINN (https://rda.ucar.edu/datasets/ds312.9/). The emission files are created using the ``fire_emis`` utility. Set the file ``finn_ghg.inp`` accordingly and then run fire_emis by typing ``./fire_emis < finn_ghg.inp`` 
 
 4. Interpolate background CH<sub>4</sub> global concentrations to the WRF-GHG initial and boundary conditions 
 
-Background methane concentrations for Europe are taken from CAM-chem (https://www.acom.ucar.edu/cam-chem/cam-chem.shtml). Set your mozbc namelist file according to the example in ``mozbc_ghg.inp`` and then run mozbc by typing ``./mozbc < mozbc_ghg.inp``.
+Background CH<sub>4</sub> concentrations are taken from CAM-chem (https://www.acom.ucar.edu/cam-chem/cam-chem.shtml). Set the file ``mozbc_ghg.inp`` accordingly and then run mozbc by typing ``./mozbc < mozbc_ghg.inp``.
 
 5. Run the WRF-GHG model 
 
-If the emission files for anthro (from sectors other than biomass burning) and biomass burning sources are all ready to use, then the script bash ``run_wrf.sh`` can be used for automation, for example by typing ``sbatch run_wrf.sh`` on Lumi. 
+If the emission files for anthro (from sectors other than fires) and fire sources are all ready to use, then the script bash ``run_wrf.sh`` can be used for automation, for example by typing ``sbatch run_wrf.sh`` on Lumi. 
 
 6. Postprocessing routines
 
 - Set the first and last Sentinel-5 Precursor (S5P) orbits in ``orbit_filter.csh`` and then run it for downloading TROPOMI XCH<sub>4</sub> fields from https://ftp.sron.nl/open-access-data-2/TROPOMI/tropomi/ch4/18_17/
 - Set the paths and dates in the file ``1.extractvars.csh`` to extract the model parameters of interest
-- Set the paths and dates in the file ``4.pick.column.v1.csh`` to calculate simulated XCH<sub>4</sub> concentrations without smoothing. This step needs NCL to perform the calculations.
+- Set the paths and dates in the file ``4.pick.column.v1.csh`` to calculate the simulated XCH<sub>4</sub> concentrations without smoothing. This step needs NCL to perform the calculations.
 - Set and run the file ``regridding.py`` for regridding the satellite data to the model grid
-- Run the file ``xch4_maps.py`` for calculating simulated XCH<sub>4</sub> concentrations with smoothing, and plotting temporal mean spatial distributions of XCH<sub>4</sub> concentration from TROPOMI and WRF-GHG estimates with and without smoothing, along with their relative differences and scatterplots with domain-wide correlation coefficients
+- Run the file ``xch4_maps.py`` for calculating the simulated XCH<sub>4</sub> concentrations with smoothing. This script also plots temporal mean spatial distributions of XCH<sub>4</sub> concentration from TROPOMI and WRF-GHG estimates with and without smoothing, along with their relative differences and scatterplots with domain-wide correlation coefficients
