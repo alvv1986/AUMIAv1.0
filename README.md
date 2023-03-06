@@ -84,20 +84,18 @@ Each sector is assigned a folder with the same name, and contains 12 nc files (m
     
     /home/angel/tropomi/CH4/ENE/v6.0_CH4_2018_12_ENE.0.1x0.1.nc
 
-with something similar for the other sectors. Run the scripts ``EDGARtoAE.py`` to write the data in the proper WRF data file format, and ``edgarv6_ch4.py`` to make a quick visualization of the emissions data. Now you should be ready to run the anthro_emis by typing ``./anthro_emis < anthro_ghg.inp``
+with something similar for the other sectors. Run the scripts ``EDGARtoAE.py`` to write the data in the proper WRF data file format, and ``edgarv6_ch4.py`` to make a quick visualization of the emissions data. Now you should be ready to run the ``anthro_emis`` by typing ``./anthro_emis < anthro_ghg.inp``
 
 3. Create the fire emission files
 
-The fire emission files are created using the fire_emis utility. Set the file ``finn_ghg.inp`` accordingly and then run the fire_emis by typing ``./anthro_emis < anthro_ghg.inp`` 
+Fire emission data are taken from FINN (https://rda.ucar.edu/datasets/ds312.9/). The emission files are created using the ``fire_emis`` utility. Set the file ``finn_ghg.inp`` accordingly and then run the fire_emis by typing ``./anthro_emis < anthro_ghg.inp`` 
 
 4. Interpolate background CH<sub>4</sub> global concentrations to the WRF-GHG initial and boundary conditions 
 
-Background methane concentrations for Europe are taken from CAM-chem (https://ads.atmosphere.copernicus.eu/cdsapp#!/dataset/cams-global-reanalysis-eac4?tab=form).
-
-- Set your mozbc namelist file according to the example in ``mozbc_ghg.inp`` and then run mozbc by typing ``./mozbc < mozbc_ghg.inp``.
+Background methane concentrations for Europe are taken from CAM-chem (https://www.acom.ucar.edu/cam-chem/cam-chem.shtml). Set your mozbc namelist file according to the example in ``mozbc_ghg.inp`` and then run mozbc by typing ``./mozbc < mozbc_ghg.inp``.
 
 5. Run the WRF-GHG model 
 
-If the emission files for anthro (from sectors other than biomass burning) and biomass burning sources are all ready to use, then the script bash ``run_wrf.sh`` can be used for automation, for example by typing ``sbatch run_wrf.sh`` on Lumi.
+If the emission files for anthro (from sectors other than biomass burning) and biomass burning sources are all ready to use, then the script bash ``run_wrf.sh`` can be used for automation, for example by typing ``sbatch run_wrf.sh`` on Lumi. The postprocessing requires...
 
 6. 
