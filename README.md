@@ -1,5 +1,5 @@
 # MethaneAU
-This methodology proposes a modeling framework for CH<sub>4</sub> inversion over Europe. Prior to proceed with the tasks below, select a study period with availability of TROPOMI CH<sub>4</sub> fields. The WRF-based models WRF-GHG and WRF-STILT were selected for the forward and backward modeling; the WRF-STILT implementation is currently under development. The a-priori emissions are taken from the EDGAR model version 6. IC/BC for the forward modeling are based on ERA5 fields for meteorology and on CAM-chem fields for CH<sub>4</sub> concentration.
+This methodology proposes a modeling framework for CH<sub>4</sub> inversion over Europe. The WRF-based models WRF-GHG and WRF-STILT were selected for the forward and backward modeling; the WRF-STILT implementation is currently under development. The a-priori emissions are taken from the EDGAR model version 6. IC/BC for the forward modeling are based on ERA5 fields for meteorology and on CAM-chem fields for CH<sub>4</sub> concentration. Prior to proceed with the tasks below, select a study period with availability of TROPOMI CH<sub>4</sub> fields.
 
 1. Run the WRF WPS for a given study period using ECMWF ERA5 fields
 
@@ -7,7 +7,7 @@ Download, via the Climate Data Store Application Program Interface (cdsapi), met
 
 2. Create a CH<sub>4</sub> a-priori emission file in the proper WRF netcdf file format
 
-For this example we consider CH4 monthly gridmaps (https://edgar.jrc.ec.europa.eu/dataset_ghg60#p2). Click to expand on the option Annual sector-specific gridmaps (1970-2018) and montlhy  sector-specific gridmaps (2000-2018), and then on CH<sub>4</sub> for each sector, if available. 24 different sectors are available for 2018: 
+For this example we consider CH<sub>4</sub> monthly gridmaps (https://edgar.jrc.ec.europa.eu/dataset_ghg60#p2). Click to expand on the option Annual sector-specific gridmaps (1970-2018) and montlhy sector-specific gridmaps (2000-2018), and then on CH<sub>4</sub> for each sector, if available. 24 different sectors are available for 2018: 
 
     ENE: Power industry
     
@@ -57,8 +57,8 @@ For this example we consider CH4 monthly gridmaps (https://edgar.jrc.ec.europa.e
     
     FFF: Fosil fuel fires
 
-Each sector being assigned a folder with the same name, and containing 12 nc files (monthly). Set ``pol_path`` in the script ``EDGARtoAE.py`` 
-(``CH4`` in this example contains all the 24 directories describe in step 2), e.g. for ENE (Power Industry) we should have:
+Each sector is assigned a folder with the same name, and contains 12 nc files (monthly). Set ``pol_path`` in the script ``EDGARtoAE.py`` 
+(``CH4`` in this example contains all the 24 directories describe above), e.g. for Power Industry (ENE) we should have:
 
     /home/angel/tropomi/CH4/ENE/v6.0_CH4_2018_1_ENE.0.1x0.1.nc
 
@@ -84,7 +84,7 @@ Each sector being assigned a folder with the same name, and containing 12 nc fil
     
     /home/angel/tropomi/CH4/ENE/v6.0_CH4_2018_12_ENE.0.1x0.1.nc
 
-with something similar for the other sectors. Run the scripts ``EDGARtoAE.py`` to write the data in the proper EDGAR data file format, and ``edgarv6_ch4.py`` to make a quick visualization of the emissions data. Now you should be ready to run the anthro_emis by typing ``./anthro_emis < anthro_ghg.inp``
+with something similar for the other sectors. Run the scripts ``EDGARtoAE.py`` to write the data in the proper WRF data file format, and ``edgarv6_ch4.py`` to make a quick visualization of the emissions data. Now you should be ready to run the anthro_emis by typing ``./anthro_emis < anthro_ghg.inp``
 
 3. 
 
