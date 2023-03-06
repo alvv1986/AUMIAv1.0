@@ -1,9 +1,9 @@
-# MethaneAU
-This methodology proposes a modeling framework for CH<sub>4</sub> inversion over Europe. The WRF-based models WRF-GHG and WRF-STILT were selected for the forward and backward modeling; the WRF-STILT implementation is currently under development. The a-priori emissions are taken from the EDGAR model version 6. IC/BC for the forward modeling are based on ERA5 fields for meteorology and on CAM-chem fields for CH<sub>4</sub> concentration. Prior to proceed with the tasks below, select a study period with availability of TROPOMI CH<sub>4</sub> fields.
+# AUMIAv1.0
+This methodology proposes a modeling framework for CH<sub>4</sub> inversion over Europe. The WRF-based models WRF-GHG and WRF-STILT were selected for the forward and backward modeling; the WRF-STILT implementation is currently under development. The a-priori emissions are taken from the EDGAR model version 6. IC/BC for the forward modeling are based on ERA5 fields for meteorology and on CAM-chem fields for CH<sub>4</sub> concentration. Prior to proceed with the tasks below, make sure you have all the NCAR utilities (anthro_emis, fire_emis and mozbc) properly installed.
 
 1. Run the WRF WPS for a given study period using ECMWF ERA5 fields
 
-Download, via the Climate Data Store Application Program Interface (cdsapi), met fields for both surface and vertical levels by running ``GetERA5-sl.py`` and ``GetERA5-pl.py``. More information about it can be found at https://dreambooker.site/2019/10/03/Initializing-the-WRF-model-with-ERA5-pressure-level/. Then, run ``geogrid.exe``, ``ungrib.exe`` and ``metgrid.exe`` as usually.
+Download, via the Climate Data Store Application Program Interface (cdsapi), met fields for both surface and vertical levels by running ``GetERA5-sl.py`` and ``GetERA5-pl.py``. Then, run ``geogrid.exe``, ``ungrib.exe`` and ``metgrid.exe`` as usually. For information on the grid configuration look up the ``namelist.wps`` file.
 
 2. Create a CH<sub>4</sub> a-priori emission file in the proper WRF netcdf file format
 
@@ -86,7 +86,9 @@ Each sector is assigned a folder with the same name, and contains 12 nc files (m
 
 with something similar for the other sectors. Run the scripts ``EDGARtoAE.py`` to write the data in the proper WRF data file format, and ``edgarv6_ch4.py`` to make a quick visualization of the emissions data. Now you should be ready to run the anthro_emis by typing ``./anthro_emis < anthro_ghg.inp``
 
-3. 
+3. Create the fire emission files
+
+The fire emission files are created using the fire_emis utility. Set the file ``finn_ghg.inp`` accordingly and then run the fire_emis by typing ``./anthro_emis < anthro_ghg.inp`` 
 
 4. Interpolate background CH<sub>4</sub> global concentrations to the WRF-GHG initial and boundary conditions 
 
