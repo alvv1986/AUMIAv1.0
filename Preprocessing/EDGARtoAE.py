@@ -138,6 +138,13 @@ industrial  = ["CHE", "IRO"]
 agriculture = ["ENF", "MNM", "AWB", "AGS"]
 waste       = ["SWD_LDF", "SWD_INC", "WWT"]
 fires       = ["FFF"]
+tot_no_fire = ["ENE", "REF_TRF", "IND", "RCO", "PRO_COAL", "PRO", "PRO_OIL", "PRO_GAS",        
+               "TRO_noRES", "TNR_Other",
+               "TNR_Aviation_CDS", "TNR_Aviation_CRS", "TNR_Aviation_LTO",
+               "TNR_Ship",
+               "CHE", "IRO",
+               "ENF", "MNM", "AWB", "AGS",
+               "SWD_LDF", "SWD_INC", "WWT"]
 
 pol_path = "/home/angel/tropomi/CH4"
 
@@ -153,6 +160,8 @@ ch4_industrial  = group_sectors(ch4_sec, industrial)
 ch4_agriculture = group_sectors(ch4_sec, agriculture)
 ch4_waste       = group_sectors(ch4_sec, waste)
 ch4_fires       = group_sectors(ch4_sec, fires)
+ch4_tot_no_fire = group_sectors(ch4_sec, tot_no_fire)
+
 write_netcdf_toAE(ch4_energy, "CH4", "ENERGY")
 write_netcdf_toAE(ch4_transport, "CH4", "TRANSPORT")
 write_netcdf_toAE(ch4_aviation, "CH4", "AVIATION")
@@ -161,3 +170,4 @@ write_netcdf_toAE(ch4_industrial, "CH4", "INDUSTRIAL")
 write_netcdf_toAE(ch4_agriculture, "CH4", "AGRICULTURE")
 write_netcdf_toAE(ch4_waste, "CH4", "WASTE")
 write_netcdf_toAE(ch4_fires, "CH4", "FIRES")
+write_netcdf_toAE(ch4_tot_no_fire, "CH4", "TOTAL_NO_FIRES")
