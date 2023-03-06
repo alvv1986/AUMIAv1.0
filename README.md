@@ -1,5 +1,5 @@
 # AUMIAv1.0
-This methodology proposes a modeling framework for CH<sub>4</sub> inversion over Europe. The WRF-based models WRF-GHG and WRF-STILT were selected for the forward and backward modeling; the WRF-STILT implementation is currently under development. The a-priori emissions are taken from the EDGAR model version 6. IC/BC for the forward modeling are based on ERA5 fields for meteorology and on CAM-chem fields for CH<sub>4</sub> concentration. Prior to proceed with the tasks below, make sure you have the NCAR utilities anthro_emis, fire_emis and mozbc properly installed.
+This methodology proposes a satellite-based tool for the quantification of CH<sub>4</sub> emissions over Europe. The WRF-based models WRF-GHG and WRF-STILT were selected for the forward and backward modeling; the WRF-STILT implementation is currently under development. The CH<sub>4</sub> space observations are based on TROPOMI measurements, in this case the SRON RemoTeC-S5P XCH4 scientific product version 17 which represents the most recent improvements to the TROPOMI operational product. The a-priori emissions are taken from the EDGAR model version 6. IC/BC for the forward modeling are based on ERA5 fields for meteorology and on CAM-chem fields for CH<sub>4</sub> concentration. Prior to proceed with the tasks below, make sure you have the NCAR utilities anthro_emis, fire_emis and mozbc properly installed.
 
 1. Run the WRF WPS for a given study period using ECMWF ERA5 fields
 
@@ -98,7 +98,7 @@ Background methane concentrations for Europe are taken from CAM-chem (https://ww
 
 If the emission files for anthro (from sectors other than biomass burning) and biomass burning sources are all ready to use, then the script bash ``run_wrf.sh`` can be used for automation, for example by typing ``sbatch run_wrf.sh`` on Lumi. 
 
-6. Postprocessing
+6. Postprocessing routines
 
-- Download... 
+- Set the first and last S5P orbits in ``orbit_filter.csh`` and then run it for downloading TROPOMI XCH<sub>4</sub> fields from https://ftp.sron.nl/open-access-data-2/TROPOMI/tropomi/ch4/18_17/. 
 - 
