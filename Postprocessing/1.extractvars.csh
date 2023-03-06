@@ -1,8 +1,8 @@
 #!/bin/csh
 setenv HDF5_DISABLE_VERSION_CHECK 1
 set id = 2018
-set inputdirectory = /home/angel/tropomi/wrfout
-set outputdirectory = /home/angel/tropomi/mlevels
+set inputdirectory = /home/angel/tropomi/wrfout  # Directory containing the hourly output files               
+set outputdirectory = /home/angel/tropomi/mlevels  # This directory will store new output files with just a few model parameters
 foreach mm (04)
 foreach day (01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31)
    foreach hr (00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23)
