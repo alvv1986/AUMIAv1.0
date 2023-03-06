@@ -100,6 +100,8 @@ If the emission files for anthro (from sectors other than biomass burning) and b
 
 6. Postprocessing routines
 
-- Set the first and last Sentinel-5 Precursor (S5P) orbits in ``orbit_filter.csh`` and then run it for downloading TROPOMI XCH<sub>4</sub> fields from https://ftp.sron.nl/open-access-data-2/TROPOMI/tropomi/ch4/18_17/. 
+- Set the first and last Sentinel-5 Precursor (S5P) orbits in ``orbit_filter.csh`` and then run it for downloading TROPOMI XCH<sub>4</sub> fields from https://ftp.sron.nl/open-access-data-2/TROPOMI/tropomi/ch4/18_17/
 - Set the paths and dates in the file ``1.extractvars.csh`` to extract the model parameters of interest
-- Set the paths and dates in the file ``4.pick.column.v1.csh`` to calculate the XCH<sub>4</sub> concentrations without smoothing. This step is optional...
+- Set the paths and dates in the file ``4.pick.column.v1.csh`` to calculate simulated XCH<sub>4</sub> concentrations without smoothing. This step is optional and needs NCL to be run.
+- Set and run the file ``regridding.py`` to... 
+- Run the file for a quick view of the data...
