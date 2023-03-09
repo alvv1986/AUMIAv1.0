@@ -9,7 +9,7 @@ foreach year (2018)
 
         setenv FIN /home/angel/tropomi/mlevels/mlevels_d01_${year}-${mon}-${day}-${hour}Z.nc
         if (-e $FIN) then
-        setenv FON /home/angel/tropomi/mcolumn/column_d01_${year}-${mon}-${day}-${hour}Z.nc
+        setenv FON /home/angel/tropomi/mcolumn/column_d01_${year}-${mon}-${day}-${hour}Z.nc  #
 
 ncl << EOF
 
