@@ -105,3 +105,4 @@ If the emission files for anthro (from sectors other than fires) and fire source
 - Set the paths and dates in the file ``4.pick.column.v1.csh`` to calculate the simulated XCH<sub>4</sub> concentrations without smoothing. This step needs NCL to perform the calculations.
 - Set and run the file ``regridding.py`` for regridding the satellite data to the model grid
 - Run the file ``xch4_maps.py`` for calculating the simulated XCH<sub>4</sub> concentrations with smoothing effects. This script also plots temporal mean spatial distributions of XCH<sub>4</sub> concentration from TROPOMI and WRF-GHG estimates with and without smoothing, along with their relative differences and scatterplots with domain-wide correlation coefficients
+- Run the file ``xch4_boxplots.py`` for plotting monthly box plots 
